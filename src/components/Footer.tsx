@@ -1,4 +1,4 @@
-import { Code2, Mail, Facebook, Instagram, Video, Heart } from 'lucide-react';
+import { Code2, Mail, MessageCircle, Instagram, Heart, Video } from 'lucide-react';
 
 const navLinks = [
   { label: 'Services', href: '#services' },
@@ -9,10 +9,10 @@ const navLinks = [
 ];
 
 const socials = [
-  { icon: Video, href: 'https://calendar.google.com/calendar/r/eventedit?text=Website+Discovery+Call', label: 'Google Meet' },
-  { icon: Facebook, href: 'https://www.facebook.com/yourpage', label: 'Facebook' },
-  { icon: Instagram, href: 'https://www.instagram.com/yourhandle', label: 'Instagram' },
-  { icon: Mail, href: 'mailto:your.email@gmail.com', label: 'Email' },
+  { icon: Video, href: 'https://calendar.app.google/uUr6nzLxhRMkAoiK6', label: 'Book a Meeting' },
+  { icon: MessageCircle, href: 'https://wa.me/919227191101', label: 'WhatsApp' },
+  { icon: Instagram, href: 'https://www.instagram.com/the_learner_09/', label: 'Instagram' },
+  { icon: Mail, href: 'mailto:vadhelaryan31@gmail.com', label: 'Email' },
 ];
 
 export default function Footer() {
@@ -65,8 +65,8 @@ export default function Footer() {
               ))}
             </div>
             <div className="mt-5 text-sm text-slate-400">
-              <a href="mailto:your.email@gmail.com" className="hover:text-sky-400 transition-colors">
-                your.email@gmail.com
+              <a href="mailto:vadhelaryan31@gmail.com" className="hover:text-sky-400 transition-colors">
+                vadhelaryan31@gmail.com
               </a>
             </div>
           </div>

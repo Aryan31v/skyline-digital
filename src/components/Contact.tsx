@@ -1,32 +1,32 @@
-import { Mail, Video, Facebook, Instagram, MessageCircle, Send } from 'lucide-react';
+import { Mail, Video, Instagram, MessageCircle, Send } from 'lucide-react';
 import { StarDoodle, DotsDoodle, PlusDoodle, SparkDoodle, ZigZagDoodle } from './Doodles';
 
 const contactOptions = [
   {
     icon: Video,
-    label: 'Book a Call',
-    subtext: 'Google Meet — Free 15 min',
-    href: 'https://calendar.google.com/calendar/r/eventedit?text=Website+Discovery+Call&details=Let%27s+discuss+your+website+project',
+    label: 'Book a Meeting',
+    subtext: 'Free 15 min Discovery Call',
+    href: 'https://calendar.app.google/uUr6nzLxhRMkAoiK6',
     color: 'from-sky-500 to-blue-600',
     glow: 'shadow-sky-500/30',
     cta: 'Schedule Now',
     external: true,
   },
   {
-    icon: Facebook,
-    label: 'Message on Facebook',
-    subtext: 'Usually replies within an hour',
-    href: 'https://www.facebook.com/yourpage',
-    color: 'from-blue-600 to-blue-700',
-    glow: 'shadow-blue-500/30',
-    cta: 'Send Message',
+    icon: MessageCircle,
+    label: 'Message on WhatsApp',
+    subtext: '+91 92271 91101',
+    href: 'https://wa.me/919227191101',
+    color: 'from-green-500 to-emerald-600',
+    glow: 'shadow-green-500/30',
+    cta: 'Message Me',
     external: true,
   },
   {
     icon: Instagram,
     label: 'DM on Instagram',
-    subtext: 'Follow for design inspiration',
-    href: 'https://www.instagram.com/yourhandle',
+    subtext: '@the_learner_09',
+    href: 'https://www.instagram.com/the_learner_09/',
     color: 'from-rose-500 to-pink-600',
     glow: 'shadow-rose-500/30',
     cta: 'Open Instagram',
@@ -35,8 +35,8 @@ const contactOptions = [
   {
     icon: Mail,
     label: 'Send an Email',
-    subtext: 'your.email@gmail.com',
-    href: 'mailto:your.email@gmail.com',
+    subtext: 'vadhelaryan31@gmail.com',
+    href: 'mailto:vadhelaryan31@gmail.com',
     color: 'from-amber-500 to-orange-500',
     glow: 'shadow-amber-500/30',
     cta: 'Send Email',
@@ -131,7 +131,7 @@ export default function Contact() {
                 const name = (target.elements.namedItem('name') as HTMLInputElement).value;
                 const email = (target.elements.namedItem('email') as HTMLInputElement).value;
                 const message = (target.elements.namedItem('message') as HTMLTextAreaElement).value;
-                window.location.href = `mailto:your.email@gmail.com?subject=Website Enquiry from ${name}&body=${encodeURIComponent(message + '\n\nFrom: ' + email)}`;
+                window.location.href = `mailto:vadhelaryan31@gmail.com?subject=Website Enquiry from ${name}&body=${encodeURIComponent(message + '\n\nFrom: ' + email)}`;
               }}
             >
               <div className="grid grid-cols-2 gap-4">

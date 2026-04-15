@@ -126,18 +126,18 @@ export default function Hero() {
           </h1>
 
           <p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-md">
-            I build stunning, fast, and conversion-focused websites that make your business stand out and attract more customers — guaranteed.
+            We build stunning, fast, and conversion-focused websites that help you make more clients — guaranteed.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://calendar.google.com/calendar/r/eventedit?text=Website+Discovery+Call&details=Let%27s+discuss+your+website+project"
+              href="https://calendar.app.google/uUr6nzLxhRMkAoiK6"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-glow group flex items-center justify-center gap-2.5 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold px-7 py-4 rounded-2xl shadow-xl shadow-sky-500/30 hover:shadow-sky-500/50 hover:scale-[1.03] transition-all duration-300"
               data-hover="Book Call"
             >
-              Book a Free Call
+              Schedule a Meeting
               <ArrowRight size={17} className="group-hover:translate-x-1 transition-transform" />
             </a>
             <a

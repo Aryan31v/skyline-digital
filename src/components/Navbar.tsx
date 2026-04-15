@@ -54,7 +54,7 @@ export default function Navbar() {
           className="hidden md:flex btn-glow items-center gap-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white text-sm font-semibold px-5 py-2.5 rounded-full shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 hover:scale-105 transition-all duration-300"
           data-hover="Let's Talk"
         >
-          Book a Call
+          Book a Meeting
         </a>
 
         <button

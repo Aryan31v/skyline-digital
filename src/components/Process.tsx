@@ -14,7 +14,7 @@ const steps = [
     num: '02',
     icon: Palette,
     title: 'Design & Plan',
-    description: 'I design a custom layout for your brand — colors, fonts, sections — and share it with you for feedback.',
+    description: 'We design a custom layout for your brand — colors, fonts, sections — and share it with you for feedback.',
     color: 'bg-amber-500',
     glow: 'shadow-amber-500/30',
   },
@@ -30,7 +30,7 @@ const steps = [
     num: '04',
     icon: Rocket,
     title: 'Launch & Support',
-    description: "We review together, make any final tweaks, and launch. I'm here for ongoing support whenever you need it.",
+    description: "We review together, make any final tweaks, and launch. We're here for ongoing support whenever you need it.",
     color: 'bg-rose-500',
     glow: 'shadow-rose-500/30',
   },
@@ -59,7 +59,7 @@ export default function Process() {
             <span className="gradient-text">In 4 Simple Steps</span>
           </h2>
           <p className="reveal delay-100 text-lg text-slate-500 max-w-xl mx-auto">
-            A smooth, transparent process with zero stress. I handle everything so you can focus on running your business.
+            A smooth, transparent process with zero stress. We handle everything so you can focus on running your business.
           </p>
         </div>
 
@@ -97,7 +97,7 @@ export default function Process() {
               Book a free 15-minute call and let's talk about your website. No commitment required.
             </p>
             <a
-              href="https://calendar.google.com/calendar/r/eventedit?text=Website+Discovery+Call&details=Let%27s+discuss+your+website+project"
+              href="https://calendar.app.google/uUr6nzLxhRMkAoiK6"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-glow inline-flex items-center gap-2 bg-white text-sky-600 font-bold px-8 py-4 rounded-2xl hover:scale-[1.04] transition-all duration-300 shadow-lg"

@@ -3,46 +3,52 @@ import { CircleDoodle, StarDoodle, ZigZagDoodle } from './Doodles';
 
 const templates = [
   {
-    title: 'The Bistro',
+    title: 'Restaurant',
     category: 'Restaurant',
     image: 'https://images.pexels.com/photos/67468/pexels-photo-67468.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-red-500 to-orange-400',
     tags: ['Menu', 'Reservations', 'Gallery'],
+    link: 'https://restaurant-tau-blue.vercel.app/',
   },
   {
-    title: 'StyleShop',
-    category: 'E-commerce',
+    title: 'E-commerce',
+    category: 'Online Store',
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-amber-500 to-yellow-400',
     tags: ['Shop', 'Cart', 'Payments'],
+    link: '#',
   },
   {
-    title: 'CorpEdge',
-    category: 'Corporate',
+    title: 'Corporate',
+    category: 'Business',
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-sky-600 to-blue-500',
     tags: ['Services', 'Blog', 'CTA'],
+    link: '#',
   },
   {
-    title: 'Alex Portfolio',
-    category: 'Portfolio',
+    title: 'Portfolio',
+    category: 'Personal',
     image: 'https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-slate-700 to-slate-500',
     tags: ['Projects', 'About', 'Hire Me'],
+    link: '#',
   },
   {
-    title: 'HealthFirst Clinic',
+    title: 'Clinics',
     category: 'Healthcare',
     image: 'https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-emerald-500 to-teal-500',
     tags: ['Booking', 'Doctors', 'Services'],
+    link: 'https://clinic-sigma-ten.vercel.app/',
   },
   {
-    title: 'PeakFit Gym',
-    category: 'Fitness',
+    title: 'Fitness',
+    category: 'Gym',
     image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-rose-500 to-red-500',
     tags: ['Classes', 'Membership', 'Trainers'],
+    link: '#',
   },
 ];
 
@@ -62,14 +68,14 @@ export default function Portfolio() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-bold tracking-widest text-sky-600 uppercase mb-4 bg-sky-50 border border-sky-100 rounded-full px-4 py-1.5">
-            My Work
+            Our Work
           </span>
           <h2 className="reveal text-4xl lg:text-5xl font-black text-slate-900 mb-4">
             Real Websites,<br />
             <span className="gradient-text">Real Results</span>
           </h2>
           <p className="reveal delay-100 text-lg text-slate-500 max-w-xl mx-auto">
-            A selection of websites I've crafted for businesses across different industries. Each one built to convert visitors into paying customers.
+            A selection of websites we've crafted for businesses across different industries. Each one built to convert visitors into paying customers.
           </p>
         </div>
 
@@ -87,10 +93,15 @@ export default function Portfolio() {
                 />
                 <div className={`card-overlay absolute inset-0 bg-gradient-to-br ${item.color} bg-opacity-90 flex flex-col items-center justify-center gap-4`}>
                   <div className="flex gap-3">
-                    <button className="flex items-center gap-1.5 bg-white text-slate-800 text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-transform">
+                    <a
+                      href={item.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 bg-white text-slate-800 text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                    >
                       <Eye size={12} />
                       Preview
-                    </button>
+                    </a>
                     <a
                       href="#contact"
                       className="flex items-center gap-1.5 bg-white/20 border border-white/40 text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-white/30 transition-all"

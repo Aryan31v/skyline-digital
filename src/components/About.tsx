@@ -36,13 +36,13 @@ export default function About() {
             <div className="absolute inset-0 bg-gradient-to-br from-amber-100 to-orange-50 rounded-[2.5rem] -rotate-2 shadow-lg" />
             <div className="relative bg-white rounded-[2.5rem] overflow-hidden shadow-2xl">
               <img
-                src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=500"
-                alt="About me"
+                src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=600"
+                alt="Our Studio"
                 className="w-full aspect-[3/4] object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-900/70 to-transparent p-6">
-                <div className="text-white font-bold text-lg">Your Name</div>
-                <div className="text-sky-300 text-sm">Web Designer & Developer</div>
+                <div className="text-white font-bold text-lg">Our Team</div>
+                <div className="text-sky-300 text-sm">Web Design & Development</div>
               </div>
             </div>
 
@@ -65,19 +65,19 @@ export default function About() {
 
         <div className="reveal-right">
           <span className="inline-block text-xs font-bold tracking-widest text-sky-600 uppercase mb-4 bg-sky-50 border border-sky-100 rounded-full px-4 py-1.5">
-            About Me
+            About Us
           </span>
 
           <h2 className="text-4xl lg:text-5xl font-black text-slate-900 mb-6 leading-tight">
-            I Turn Your Vision Into a<br />
+            We Turn Your Vision Into a<br />
             <span className="gradient-text">Website That Works</span>
           </h2>
 
           <p className="text-slate-500 leading-relaxed mb-4">
-            Hey, I'm <strong className="text-slate-800">[Your Name]</strong> — a passionate web designer and developer who loves helping businesses grow through beautiful, functional websites.
+            We are a team of passionate web designers and AI automation specialists who love helping businesses grow through beautiful, functional digital solutions.
           </p>
           <p className="text-slate-500 leading-relaxed mb-8">
-            I've helped <strong className="text-slate-700">50+ businesses</strong> across multiple industries get online and start attracting customers. My approach combines clean design with proven conversion strategies so your website actually grows your business.
+            We help businesses across multiple industries get online and start attracting customers. Our approach combines clean design with proven conversion strategies and AI efficiency so your website actually grows your business.
           </p>
 
           <div className="space-y-3 mb-10">

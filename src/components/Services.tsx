@@ -77,14 +77,14 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <span className="inline-block text-xs font-bold tracking-widest text-sky-600 uppercase mb-4 bg-sky-50 border border-sky-100 rounded-full px-4 py-1.5">
-            What I Build
+            What We Build
           </span>
           <h2 className="reveal text-4xl lg:text-5xl font-black text-slate-900 mb-4">
             Every Business Deserves a<br />
             <span className="gradient-text">Great Website</span>
           </h2>
           <p className="reveal delay-100 text-lg text-slate-500 max-w-xl mx-auto">
-            From local shops to growing companies — I craft websites tailored to your specific industry and goals.
+            From local shops to growing companies — we craft websites tailored to your specific industry and goals.
           </p>
         </div>
 
