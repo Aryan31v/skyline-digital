@@ -16,7 +16,7 @@ const templates = [
     image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-amber-500 to-yellow-400',
     tags: ['Shop', 'Cart', 'Payments'],
-    link: '#',
+    link: 'https://e-commerce-tau-ruddy.vercel.app/',
   },
   {
     title: 'Corporate',
@@ -24,7 +24,7 @@ const templates = [
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-sky-600 to-blue-500',
     tags: ['Services', 'Blog', 'CTA'],
-    link: '#',
+    link: 'https://corporate-website-nine-black.vercel.app/',
   },
   {
     title: 'Portfolio',
@@ -32,7 +32,7 @@ const templates = [
     image: 'https://images.pexels.com/photos/196645/pexels-photo-196645.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-slate-700 to-slate-500',
     tags: ['Projects', 'About', 'Hire Me'],
-    link: '#',
+    link: 'https://portfolio-website-lilac-three-13.vercel.app/',
   },
   {
     title: 'Clinics',
@@ -48,7 +48,7 @@ const templates = [
     image: 'https://images.pexels.com/photos/841130/pexels-photo-841130.jpeg?auto=compress&cs=tinysrgb&w=700',
     color: 'from-rose-500 to-red-500',
     tags: ['Classes', 'Membership', 'Trainers'],
-    link: '#',
+    link: 'https://gym-website-phi-ecru.vercel.app/',
   },
 ];
 
