@@ -5,6 +5,7 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
+import Pricing from './components/Pricing';
 import Process from './components/Process';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -27,6 +28,7 @@ function App() {
         <Marquee />
         <Services />
         <Portfolio />
+        <Pricing />
         <Process />
         <About />
         <Contact />

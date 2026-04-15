@@ -1,4 +1,4 @@
-import { ExternalLink, Eye } from 'lucide-react';
+import { ExternalLink, Eye, Sparkles, MessageCircle } from 'lucide-react';
 import { CircleDoodle, StarDoodle, ZigZagDoodle } from './Doodles';
 
 const templates = [
@@ -52,6 +52,14 @@ const templates = [
   },
 ];
 
+const premiumTemplate = {
+  title: 'Luxury Real Estate',
+  image: 'https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200',
+  tags: ['Custom Animations', 'Property Search', 'Lead Capture System', 'CRM Integration', 'WhatsApp Widget', '3D Gallery'],
+  link: '#',
+  description: 'A bespoke digital experience for a high-end real estate brand. Full custom design system, cinematic micro-interactions, and a property search engine built entirely from scratch to convert high-intent buyers.',
+};
+
 export default function Portfolio() {
   return (
     <section id="portfolio" className="relative py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
@@ -66,7 +74,7 @@ export default function Portfolio() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12">
           <span className="inline-block text-xs font-bold tracking-widest text-sky-600 uppercase mb-4 bg-sky-50 border border-sky-100 rounded-full px-4 py-1.5">
             Our Work
           </span>
@@ -77,6 +85,14 @@ export default function Portfolio() {
           <p className="reveal delay-100 text-lg text-slate-500 max-w-xl mx-auto">
             A selection of websites we've crafted for businesses across different industries. Each one built to convert visitors into paying customers.
           </p>
+        </div>
+
+        <div className="flex items-center gap-4 mb-8">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-slate-200" />
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-50 border border-sky-100">
+            <span className="text-xs font-bold tracking-widest text-sky-600 uppercase">Classic Builds</span>
+          </div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-slate-200" />
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -130,7 +146,7 @@ export default function Portfolio() {
           ))}
         </div>
 
-        <div className="text-center mt-14">
+        <div className="text-center mt-10 mb-20">
           <a
             href="#contact"
             className="btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-sky-500 to-cyan-500 text-white font-semibold px-8 py-4 rounded-2xl shadow-xl shadow-sky-500/25 hover:shadow-sky-500/45 hover:scale-[1.03] transition-all duration-300"
@@ -138,6 +154,88 @@ export default function Portfolio() {
           >
             Want something like this? Let's build yours
           </a>
+        </div>
+
+        <div className="flex items-center gap-4 mb-8">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-amber-200" />
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-50 border border-amber-200">
+            <Sparkles size={13} className="text-amber-500" />
+            <span className="text-xs font-bold tracking-widest text-amber-600 uppercase">Premium Build</span>
+          </div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-amber-200" />
+        </div>
+
+        <p className="reveal text-center text-slate-500 text-base max-w-xl mx-auto mb-10">
+          For businesses ready to invest in a digital experience that operates at a completely different level — fully bespoke, no templates, no compromises.
+        </p>
+
+        <div className="reveal portfolio-card group relative bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl overflow-hidden border border-amber-500/20 shadow-2xl shadow-slate-900/30">
+          <div className="lg:grid lg:grid-cols-2">
+            <div className="relative h-64 lg:h-auto overflow-hidden">
+              <img
+                src={premiumTemplate.image}
+                alt={premiumTemplate.title}
+                className="card-img w-full h-full object-cover"
+              />
+              <div className="card-overlay absolute inset-0 bg-gradient-to-br from-amber-600/85 to-orange-500/85 flex items-center justify-center gap-4">
+                <a
+                  href={premiumTemplate.link}
+                  className="flex items-center gap-1.5 bg-white text-slate-800 text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                >
+                  <Eye size={12} />
+                  Preview
+                </a>
+                <a
+                  href="https://wa.me/919227191101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-1.5 bg-white/20 border border-white/40 text-white text-xs font-bold px-4 py-2 rounded-full hover:bg-white/30 transition-all"
+                >
+                  <ExternalLink size={12} />
+                  Get a Quote
+                </a>
+              </div>
+              <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-slate-900/70 to-transparent lg:hidden" />
+              <div className="absolute top-4 left-4 flex items-center gap-1.5 bg-gradient-to-r from-amber-500 to-orange-500 text-white text-[10px] font-bold px-3 py-1 rounded-full">
+                <Sparkles size={9} />
+                Premium Tier
+              </div>
+            </div>
+
+            <div className="p-8 lg:p-12 flex flex-col justify-center">
+              <div className="flex items-center gap-2 mb-4">
+                <Sparkles size={15} className="text-amber-400" />
+                <span className="text-xs font-bold tracking-widest text-amber-400 uppercase">Fully Custom</span>
+              </div>
+              <h3 className="text-2xl lg:text-3xl font-black text-white mb-3">{premiumTemplate.title}</h3>
+              <p className="text-slate-400 text-sm leading-relaxed mb-6">{premiumTemplate.description}</p>
+              <div className="flex flex-wrap gap-2 mb-8">
+                {premiumTemplate.tags.map((tag) => (
+                  <span key={tag} className="text-[11px] font-semibold bg-white/8 text-amber-300 border border-amber-500/20 rounded-full px-3 py-1" style={{ background: 'rgba(255,255,255,0.06)' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://wa.me/919227191101"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-glow inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-bold px-6 py-3 rounded-2xl shadow-xl shadow-amber-500/25 hover:shadow-amber-500/45 hover:scale-[1.03] transition-all duration-300"
+                  data-hover="Let's Talk"
+                >
+                  <MessageCircle size={15} />
+                  Discuss This Project
+                </a>
+                <a
+                  href="#pricing"
+                  className="inline-flex items-center gap-2 border border-white/15 text-slate-300 font-semibold px-6 py-3 rounded-2xl hover:border-amber-500/40 hover:text-amber-300 transition-all duration-300"
+                >
+                  See Pricing
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
