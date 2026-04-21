@@ -56,6 +56,12 @@ const templates = [
 export default function Portfolio() {
   const navigate = useNavigate();
 
+  const handleDemoNavigation = (path: string) => {
+    // Save current scroll position before navigating
+    sessionStorage.setItem('homeScrollPos', window.scrollY.toString());
+    navigate(path);
+  };
+
   return (
     <section id="portfolio" className="relative py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
       <div className="absolute top-16 left-12 animate-spin-slow pointer-events-none">
@@ -105,7 +111,7 @@ export default function Portfolio() {
                 <div className={`card-overlay absolute inset-0 bg-gradient-to-br ${item.color} bg-opacity-90 flex flex-col items-center justify-center gap-4`}>
                   <div className="flex gap-3">
                     <button
-                      onClick={() => navigate(item.path)}
+                      onClick={() => handleDemoNavigation(item.path)}
                       className="flex items-center gap-1.5 bg-white text-slate-800 text-xs font-bold px-4 py-2 rounded-full hover:scale-105 transition-transform"
                     >
                       <Eye size={12} />

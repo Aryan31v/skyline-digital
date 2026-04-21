@@ -1,6 +1,8 @@
-import { Suspense, lazy, useEffect } from 'react';
-import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
+import { Suspense, lazy, useEffect, useLayoutEffect } from 'react';
+import { Routes, Route, useLocation, useNavigate, Outlet } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CustomCursor from './components/CustomCursor';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -14,7 +16,10 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import { useScrollAnimation } from './hooks/useScrollAnimation';
 
-// Lazy load project demos from their direct source folders
+// Register GSAP plugins
+gsap.registerPlugin(ScrollTrigger);
+
+// Lazy load project demos
 const RestaurantDemo = lazy(() => import('./websites/RESTAURANT/src/App'));
 const EcommerceDemo = lazy(() => import('./websites/E_COMMERCE/src/App'));
 const CorporateDemo = lazy(() => import('./websites/CORPORATE_WEBSITE/src/App'));
@@ -26,7 +31,7 @@ function ErrorFallback({ error, resetErrorBoundary }: any) {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-slate-50 p-6 text-center">
       <h2 className="text-2xl font-bold text-slate-900 mb-4">Oops! This demo failed to load</h2>
-      <p className="text-slate-600 mb-8 max-w-md">{error.message}</p>
+      <p className="text-slate-600 mb-8 max-w-md text-sm">{error.message || 'Something went wrong while rendering this demo.'}</p>
       <button
         onClick={() => {
           resetErrorBoundary();
@@ -40,8 +45,94 @@ function ErrorFallback({ error, resetErrorBoundary }: any) {
   );
 }
 
+function Layout() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleBack = () => navigate('/');
+
+  useEffect(() => {
+    // 1. Listen for postMessage (for iFrame support)
+    const handleMessage = (event: MessageEvent) => {
+      if (event.data === 'BACK_TO_HOME' || event.data?.type === 'BACK_TO_HOME') {
+        handleBack();
+      }
+    };
+    window.addEventListener('message', handleMessage);
+
+    // 2. Global Cleanup on Route Change
+    if (gsap) {
+      ScrollTrigger.getAll().forEach(t => t.kill());
+      gsap.killTweensOf("*");
+    }
+    
+    document.body.style.overflow = "";
+    document.body.style.position = "";
+    document.body.style.height = "";
+    document.body.className = "font-sans antialiased";
+
+    if (location.pathname !== '/') {
+      window.scrollTo(0, 0);
+    }
+
+    const timer = setTimeout(() => {
+      window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('scroll'));
+      ScrollTrigger.refresh();
+    }, 200);
+
+    const path = location.pathname.substring(1);
+    document.title = path 
+      ? `${path.charAt(0).toUpperCase() + path.slice(1)} Demo — Landing Page`
+      : 'Landing Page — Professional Website Design';
+
+    return () => {
+      window.removeEventListener('message', handleMessage);
+      clearTimeout(timer);
+    };
+  }, [location]);
+
+  return (
+    <div className="font-sans antialiased">
+      <CustomCursor />
+      <ErrorBoundary 
+        FallbackComponent={ErrorFallback} 
+        onReset={() => {
+          sessionStorage.removeItem('homeScrollPos');
+          navigate('/');
+        }}
+      >
+        <Suspense fallback={
+          <div className="h-screen w-screen flex flex-col items-center justify-center bg-slate-900 text-white gap-6">
+            <div className="w-16 h-16 border-4 border-sky-500 border-t-transparent rounded-full animate-spin shadow-lg shadow-sky-500/20"></div>
+            <div className="text-center">
+              <p className="font-black tracking-widest uppercase text-sm mb-2 animate-pulse">Entering Demo</p>
+              <p className="text-sky-400 text-xs font-medium uppercase tracking-[0.2em]">{location.pathname.substring(1) || 'Home'}</p>
+            </div>
+          </div>
+        }>
+          <Outlet context={{ handleBack }} />
+        </Suspense>
+      </ErrorBoundary>
+    </div>
+  );
+}
+
 function Home() {
   useScrollAnimation();
+  
+  useLayoutEffect(() => {
+    const savedPosition = sessionStorage.getItem('homeScrollPos');
+    if (savedPosition) {
+      const position = parseInt(savedPosition, 10);
+      const timer = setTimeout(() => {
+        window.scrollTo({ top: position, behavior: 'instant' });
+        sessionStorage.removeItem('homeScrollPos');
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, []);
+
   return (
     <>
       <Navbar />
@@ -60,64 +151,27 @@ function Home() {
   );
 }
 
-function App() {
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    // Scroll to top on every route change
-    window.scrollTo(0, 0);
-    
-    // Trigger a window resize event to force scroll-reveal libraries to recalculate
-    setTimeout(() => {
-      window.dispatchEvent(new Event('resize'));
-      // Also trigger a scroll event
-      window.dispatchEvent(new Event('scroll'));
-}, 100);
-
-    // Update Document Title
-    const path = location.pathname.substring(1);
-    document.title = path 
-      ? `${path.charAt(0).toUpperCase() + path.slice(1)} Demo — Landing Page`
-      : 'Landing Page — Professional Website Design';
-}, [location]);
-
-  const handleBack = () => {
-    navigate('/');
-    // Scroll to portfolio section after returning
-    setTimeout(() => {
-      const portfolioSection = document.getElementById('portfolio');
-      if (portfolioSection) {
-        portfolioSection.scrollIntoView({ behavior: 'smooth' });
-      }
-    }, 100);
-  };
-
+function DemoWrapper({ children, theme }: { children: React.ReactNode, theme: string }) {
   return (
-    <div className="font-sans antialiased">
-      <CustomCursor />
-      <ErrorBoundary FallbackComponent={ErrorFallback} onReset={() => navigate('/')}>
-        <Suspense fallback={
-          <div className="h-screen w-screen flex flex-col items-center justify-center bg-slate-900 text-white gap-6">
-            <div className="w-16 h-16 border-4 border-sky-500 border-t-transparent rounded-full animate-spin shadow-lg shadow-sky-500/20"></div>
-            <div className="text-center">
-              <p className="font-black tracking-widest uppercase text-sm mb-2 animate-pulse">Entering Demo</p>
-              <p className="text-sky-400 text-xs font-medium uppercase tracking-[0.2em]">{location.pathname.substring(1)}</p>
-            </div>
-          </div>
-        }>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Restaurant" element={<div className="restaurant-theme"><RestaurantDemo onBack={handleBack} /></div>} />
-            <Route path="/Ecommerce" element={<div className="ecommerce-theme"><EcommerceDemo onBack={handleBack} /></div>} />
-            <Route path="/Corporate" element={<div className="corporate-theme"><CorporateDemo onBack={handleBack} /></div>} />
-            <Route path="/Portfolio" element={<div className="portfolio-theme"><PersonalPortfolioDemo onBack={handleBack} /></div>} />
-            <Route path="/Clinic" element={<div className="clinic-theme"><ClinicDemo onBack={handleBack} /></div>} />
-            <Route path="/Gym" element={<div className="gym-theme"><GymDemo onBack={handleBack} /></div>} />
-          </Routes>
-        </Suspense>
-      </ErrorBoundary>
+    <div className={`${theme} min-h-screen relative bg-white`}>
+      {children}
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="Restaurant" element={<DemoWrapper theme="restaurant-theme"><RestaurantDemo onBack={() => window.dispatchEvent(new MessageEvent('message', { data: 'BACK_TO_HOME' }))} /></DemoWrapper>} />
+        <Route path="Ecommerce" element={<DemoWrapper theme="ecommerce-theme"><EcommerceDemo onBack={() => window.dispatchEvent(new MessageEvent('message', { data: 'BACK_TO_HOME' }))} /></DemoWrapper>} />
+        <Route path="Corporate" element={<DemoWrapper theme="corporate-theme"><CorporateDemo onBack={() => window.dispatchEvent(new MessageEvent('message', { data: 'BACK_TO_HOME' }))} /></DemoWrapper>} />
+        <Route path="Portfolio" element={<DemoWrapper theme="portfolio-theme"><PersonalPortfolioDemo onBack={() => window.dispatchEvent(new MessageEvent('message', { data: 'BACK_TO_HOME' }))} /></DemoWrapper>} />
+        <Route path="Clinic" element={<DemoWrapper theme="clinic-theme"><ClinicDemo onBack={() => window.dispatchEvent(new MessageEvent('message', { data: 'BACK_TO_HOME' }))} /></DemoWrapper>} />
+        <Route path="Gym" element={<DemoWrapper theme="gym-theme"><GymDemo onBack={() => window.dispatchEvent(new MessageEvent('message', { data: 'BACK_TO_HOME' }))} /></DemoWrapper>} />
+      </Route>
+    </Routes>
   );
 }
 
