@@ -15,16 +15,16 @@ export default function CustomCursor() {
       trailRef.current = {
         x: trailRef.current.x + (posRef.current.x - trailRef.current.x) * 0.12,
         y: trailRef.current.y + (posRef.current.y - trailRef.current.y) * 0.12,
-      };
+  };
       setTrail({ ...trailRef.current });
       rafRef.current = requestAnimationFrame(animate);
-    };
+};
     rafRef.current = requestAnimationFrame(animate);
 
     const handleMouseMove = (e: MouseEvent) => {
       posRef.current = { x: e.clientX, y: e.clientY };
       setPos({ x: e.clientX, y: e.clientY });
-    };
+};
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
@@ -32,11 +32,11 @@ export default function CustomCursor() {
       if (interactive) {
         setIsHovering(true);
         setHoverText(interactive.getAttribute('data-hover') || '');
-      } else {
+  } else {
         setIsHovering(false);
         setHoverText('');
-      }
-    };
+  }
+};
 
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
@@ -52,8 +52,8 @@ export default function CustomCursor() {
       document.removeEventListener('mouseover', handleMouseOver);
       document.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mouseup', handleMouseUp);
-    };
-  }, []);
+};
+}, []);
 
   return (
     <>
@@ -73,7 +73,7 @@ export default function CustomCursor() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-        }}
+    }}
       >
         {hoverText && (
           <span className="text-[9px] font-semibold text-sky-600 whitespace-nowrap">
@@ -91,7 +91,7 @@ export default function CustomCursor() {
           height: isClicking ? 6 : 8,
           transform: 'translate(-50%, -50%)',
           transition: 'width 0.1s, height 0.1s',
-        }}
+    }}
       />
     </>
   );

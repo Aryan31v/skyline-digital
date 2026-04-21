@@ -1,4 +1,5 @@
-import { Code2, Mail, MessageCircle, Instagram, Heart, Video } from 'lucide-react';
+import { Code2, Mail, MessageCircle, Heart, Video } from 'lucide-react';
+import Instagram from 'lucide-react/dist/esm/icons/instagram';
 
 const navLinks = [
   { label: 'Services', href: '#services' },

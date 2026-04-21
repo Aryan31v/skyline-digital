@@ -1,4 +1,4 @@
-# WebCraft Landing Page: Project Map
+# Landing Page: Project Map
 
 ## Core Objective
 A single-page, modern promotional website (Landing Page) for a web design and development agency launched by Aryan. It focuses on "Helping clients make more clients" through professional, high-converting websites.
@@ -24,20 +24,31 @@ The application is structured as a continuous scrolling single-page site. The ma
 -   **`Hero.tsx`**: Initial, above-the-fold content designed to hook visitors.
 -   **`Marquee.tsx`**: Infinite scrolling text or logo banner.
 -   **`Services.tsx`**: Displays the technical or creative offerings.
--   **`Portfolio.tsx`**: Showcases previous projects or case studies.
+-   **`Portfolio.tsx`**: Showcases previous projects or case studies (linked to internal routes).
 -   **`Process.tsx`**: Outlines the steps taken from client onboarding to delivery.
 -   **`About.tsx`**: Information about the team or philosophy.
 -   **`Contact.tsx`**: Form/information to reach out to the agency (the main call to action).
 -   **`Footer.tsx`**: Final page content and links.
--   **`Doodles.tsx`**: Decorative SVG or illustrative assets meant to supplement the design of other sections.
+-   **`Doodles.tsx`**: Decorative SVG or illustrative assets.
+
+### Integrated Websites (`src/websites/`):
+Contains direct source code of external project demos, connected via React Router:
+-   **`CLINIC`**: Healthcare template.
+-   **`CORPORATE_WEBSITE`**: Business template.
+-   **`E_COMMERCE`**: Online store template.
+-   **`GYM_WEBSITE`**: Fitness template.
+-   **`PORTFOLIO`**: Personal branding template.
+-   **`RESTAURANT`**: F&B template.
 
 ### Custom Hooks (`src/hooks/`):
 -   **`useScrollAnimation.ts`**: Handles intersection observers or scroll listeners to trigger CSS entry animations as the user scrolls down the page.
 
 ## Data Flow & State Management
 -   Currently entirely front-end driven.
--   No external data-fetching logic is active yet.
+-   Uses `react-router-dom` for seamless internal navigation between the Landing Page and project demos.
+-   Force-triggers `resize` and `scroll` events on navigation to maintain animation visibility.
 
 ## Next Steps / Pending
--   Connect the **Contact** form to an actual backend (potentially utilizing the installed Supabase client).
--   Populate content if currently utilizing placeholder text.
+-   Connect the **Contact** form to an actual backend (Supabase).
+-   Fine-tune individual project assets (ensure image paths in `src/websites` are correctly resolved).
+-   Add **Orbital Craft** integration if requested.

@@ -22,12 +22,12 @@ export default function Hero() {
         setMousePos({
           x: (e.clientX - rect.left - rect.width / 2) / rect.width,
           y: (e.clientY - rect.top - rect.height / 2) / rect.height,
-        });
-      }
-    };
+    });
+  }
+};
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
+}, []);
 
   useEffect(() => {
     const word = TYPING_WORDS[wordIndex];
@@ -35,21 +35,21 @@ export default function Hero() {
 
     if (!isDeleting && displayText.length < word.length) {
       timeout = setTimeout(() => setDisplayText(word.slice(0, displayText.length + 1)), 80);
-    } else if (!isDeleting && displayText.length === word.length) {
+} else if (!isDeleting && displayText.length === word.length) {
       timeout = setTimeout(() => setIsDeleting(true), 2000);
-    } else if (isDeleting && displayText.length > 0) {
+} else if (isDeleting && displayText.length > 0) {
       timeout = setTimeout(() => setDisplayText(displayText.slice(0, -1)), 50);
-    } else if (isDeleting && displayText.length === 0) {
+} else if (isDeleting && displayText.length === 0) {
       setIsDeleting(false);
       setWordIndex((i) => (i + 1) % TYPING_WORDS.length);
-    }
+}
     return () => clearTimeout(timeout);
-  }, [displayText, isDeleting, wordIndex]);
+}, [displayText, isDeleting, wordIndex]);
 
   const parallax = (strength: number) => ({
     transform: `translate(${mousePos.x * strength}px, ${mousePos.y * strength}px)`,
     transition: 'transform 0.3s ease-out',
-  });
+});
 
   return (
     <section

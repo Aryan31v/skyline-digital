@@ -38,21 +38,21 @@ const budgetResults: Record<BudgetKey, BudgetResult> = {
     cta: 'Get a Classic Quote',
     href: '#contact',
     colorClass: 'from-sky-500 to-cyan-500',
-  },
+},
   mid: {
     title: "You're in the sweet spot.",
     body: 'You could go Classic with extra features, or kick off a focused Premium project. A quick conversation will make the right path obvious — no pressure, just clarity.',
     cta: "Let's Figure It Out Together",
     href: 'https://wa.me/919227191101',
     colorClass: 'from-sky-500 to-cyan-500',
-  },
+},
   large: {
     title: 'Premium is built for you.',
     body: "We'll scope a fully bespoke project: a custom design system, integrations, and a digital presence that matches the scale and ambition of your business.",
     cta: 'Discuss My Premium Project',
     href: 'https://wa.me/919227191101',
     colorClass: 'from-amber-500 to-orange-500',
-  },
+},
 };
 
 const budgetOptions: { key: BudgetKey; label: string }[] = [
@@ -200,7 +200,7 @@ export default function Pricing() {
                     selected === key
                       ? 'bg-white text-slate-900 border-white scale-[1.04] shadow-lg'
                       : 'text-slate-300 border-white/15 hover:text-white hover:border-white/30'
-                  }`}
+              }`}
                   style={selected !== key ? { background: 'rgba(255,255,255,0.06)' } : undefined}
                 >
                   {label}
@@ -211,7 +211,7 @@ export default function Pricing() {
             <div
               className={`transition-all duration-500 ease-out ${
                 selected ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
-              }`}
+          }`}
             >
               {selected && (
                 <div className="max-w-lg mx-auto text-center rounded-2xl px-8 py-8 border border-white/10" style={{ background: 'rgba(255,255,255,0.05)' }}>

@@ -18,13 +18,13 @@ export default function Navbar() {
     const handleScroll = () => setScrolled(window.scrollY > 40);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+}, []);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled ? 'glass shadow-sm py-3' : 'bg-transparent py-5'
-      }`}
+  }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5 group">
@@ -32,7 +32,7 @@ export default function Navbar() {
             <Code2 size={18} className="text-white" />
           </div>
           <span className="text-lg font-bold text-slate-800 tracking-tight">
-            Web<span className="gradient-text">Craft</span>
+            Landing <span className="gradient-text">Page</span>
           </span>
         </a>
 

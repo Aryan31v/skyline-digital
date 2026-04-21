@@ -10,7 +10,7 @@ const services = [
     bg: 'bg-sky-50',
     border: 'border-sky-100',
     tag: 'Most Popular',
-  },
+},
   {
     icon: ShoppingBag,
     title: 'E-commerce Stores',
@@ -19,7 +19,7 @@ const services = [
     bg: 'bg-amber-50',
     border: 'border-amber-100',
     tag: '',
-  },
+},
   {
     icon: Utensils,
     title: 'Restaurant & Cafe',
@@ -28,7 +28,7 @@ const services = [
     bg: 'bg-red-50',
     border: 'border-red-100',
     tag: '',
-  },
+},
   {
     icon: User,
     title: 'Portfolio & Creative',
@@ -37,7 +37,7 @@ const services = [
     bg: 'bg-cyan-50',
     border: 'border-cyan-100',
     tag: '',
-  },
+},
   {
     icon: Stethoscope,
     title: 'Clinics & Healthcare',
@@ -46,7 +46,7 @@ const services = [
     bg: 'bg-emerald-50',
     border: 'border-emerald-100',
     tag: '',
-  },
+},
   {
     icon: Dumbbell,
     title: 'Fitness & Wellness',
@@ -55,7 +55,7 @@ const services = [
     bg: 'bg-slate-50',
     border: 'border-slate-100',
     tag: '',
-  },
+},
 ];
 
 export default function Services() {
@@ -115,7 +115,7 @@ export default function Services() {
                 </a>
               </div>
             );
-          })}
+      })}
         </div>
       </div>
     </section>

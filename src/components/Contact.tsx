@@ -1,4 +1,5 @@
-import { Mail, Video, Instagram, MessageCircle, Send } from 'lucide-react';
+import { Mail, Video, MessageCircle, Send } from 'lucide-react';
+import Instagram from 'lucide-react/dist/esm/icons/instagram';
 import { StarDoodle, DotsDoodle, PlusDoodle, SparkDoodle, ZigZagDoodle } from './Doodles';
 
 const contactOptions = [
@@ -11,7 +12,7 @@ const contactOptions = [
     glow: 'shadow-sky-500/30',
     cta: 'Schedule Now',
     external: true,
-  },
+},
   {
     icon: MessageCircle,
     label: 'Message on WhatsApp',
@@ -21,7 +22,7 @@ const contactOptions = [
     glow: 'shadow-green-500/30',
     cta: 'Message Me',
     external: true,
-  },
+},
   {
     icon: Instagram,
     label: 'DM on Instagram',
@@ -31,7 +32,7 @@ const contactOptions = [
     glow: 'shadow-rose-500/30',
     cta: 'Open Instagram',
     external: true,
-  },
+},
   {
     icon: Mail,
     label: 'Send an Email',
@@ -41,7 +42,7 @@ const contactOptions = [
     glow: 'shadow-amber-500/30',
     cta: 'Send Email',
     external: false,
-  },
+},
 ];
 
 export default function Contact() {
@@ -100,7 +101,7 @@ export default function Contact() {
                 </span>
               </a>
             );
-          })}
+  })}
         </div>
 
         <div className="bg-gradient-to-br from-slate-900 to-slate-800 rounded-3xl p-10 lg:p-14 relative overflow-hidden">
@@ -132,7 +133,7 @@ export default function Contact() {
                 const email = (target.elements.namedItem('email') as HTMLInputElement).value;
                 const message = (target.elements.namedItem('message') as HTMLTextAreaElement).value;
                 window.location.href = `mailto:vadhelaryan31@gmail.com?subject=Website Enquiry from ${name}&body=${encodeURIComponent(message + '\n\nFrom: ' + email)}`;
-              }}
+      }}
             >
               <div className="grid grid-cols-2 gap-4">
                 <input

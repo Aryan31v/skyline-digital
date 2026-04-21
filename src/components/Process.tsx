@@ -9,7 +9,7 @@ const steps = [
     description: 'We chat about your business, goals, and what you need from your website. No technical jargon, just a friendly conversation.',
     color: 'bg-sky-500',
     glow: 'shadow-sky-500/30',
-  },
+},
   {
     num: '02',
     icon: Palette,
@@ -17,7 +17,7 @@ const steps = [
     description: 'We design a custom layout for your brand — colors, fonts, sections — and share it with you for feedback.',
     color: 'bg-amber-500',
     glow: 'shadow-amber-500/30',
-  },
+},
   {
     num: '03',
     icon: Code2,
@@ -25,7 +25,7 @@ const steps = [
     description: 'Your website comes to life with clean code, fast loading speeds, and mobile-friendly design built in.',
     color: 'bg-cyan-500',
     glow: 'shadow-cyan-500/30',
-  },
+},
   {
     num: '04',
     icon: Rocket,
@@ -33,7 +33,7 @@ const steps = [
     description: "We review together, make any final tweaks, and launch. We're here for ongoing support whenever you need it.",
     color: 'bg-rose-500',
     glow: 'shadow-rose-500/30',
-  },
+},
 ];
 
 export default function Process() {
@@ -83,7 +83,7 @@ export default function Process() {
                   <p className="text-sm text-slate-500 leading-relaxed">{step.description}</p>
                 </div>
               );
-            })}
+        })}
           </div>
         </div>
 
