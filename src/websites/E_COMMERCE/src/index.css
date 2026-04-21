@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --keyframes-accordion-down: {
+    from: { height: 0 },
+    to: { height: var(--radix-accordion-content-height) },
+  };
+  --keyframes-accordion-up: {
+    from: { height: var(--radix-accordion-content-height) },
+    to: { height: 0 },
+  };
+
+  --animation-accordion-down: accordion-down 0.2s ease-out;
+  --animation-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@layer base {
+  :root {
+    --background: #F9F9F8;
+    --foreground: #1A1A1A;
+    --card: #FFFFFF;
+    --card-foreground: #1A1A1A;
+    --popover: #FFFFFF;
+    --popover-foreground: #1A1A1A;
+    --primary: #1A1A1A;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F3F3F1;
+    --secondary-foreground: #1A1A1A;
+    --muted: #F3F3F1;
+    --muted-foreground: #717171;
+    --accent: #B08D57;
+    --accent-foreground: #FFFFFF;
+    --destructive: #D14F4F;
+    --destructive-foreground: #fafafa;
+    --border: #E5E5E1;
+    --input: #E5E5E1;
+    --ring: #1A1A1A;
+    --chart-1: #2662d9;
+    --chart-2: #2eb88a;
+    --chart-3: #e88c30;
+    --chart-4: #af57db;
+    --chart-5: #ee46d7;
+    --radius: 0.75rem;
+  }
+
+  .dark {
+    --background: #1A1A1A;
+    --foreground: #F9F9F8;
+    --card: #242424;
+    --card-foreground: #F9F9F8;
+    --popover: #242424;
+    --popover-foreground: #F9F9F8;
+    --primary: #F9F9F8;
+    --primary-foreground: #1A1A1A;
+    --secondary: #2A2A2A;
+    --secondary-foreground: #F9F9F8;
+    --muted: #2A2A2A;
+    --muted-foreground: #888888;
+    --accent: #B08D57;
+    --accent-foreground: #FFFFFF;
+    --destructive: #D14F4F;
+    --destructive-foreground: #fafafa;
+    --border: #333333;
+    --input: #333333;
+    --ring: #F9F9F8;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-medium tracking-tight;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-background/80 backdrop-blur-md border border-border/50;
+  }
+  
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .premium-shadow {
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+  }
+
+  .premium-shadow-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:shadow-black/5 hover:-translate-y-1;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(160px, auto);
+    gap: 20px;
+  }
+
+  .bento-card {
+    @apply bg-card border border-border rounded-[2rem] p-6 overflow-hidden relative flex flex-col;
+    box-shadow: 0 4px 20px -4px rgba(0, 0, 0, 0.02);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .bento-card:hover {
+    @apply border-accent/30 -translate-y-1;
+    box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Luxury Bento Color Variants */
+  .bento-hero {
+    @apply bg-[#1A1A1A] text-white border-white/5;
+  }
+  .bento-featured {
+    @apply bg-[#F3F3F1] border-[#E5E5E1];
+  }
+  .bento-trust {
+    @apply bg-[#E8E8E1] border-[#DADAD1];
+  }
+  .bento-newsletter {
+    @apply bg-[#B08D57] text-white border-white/10;
+  }
+  .bento-categories {
+    @apply bg-white border-border;
+  }
+  .bento-accent-green {
+    @apply bg-[#2D3A30] text-white border-white/5;
+  }
+}

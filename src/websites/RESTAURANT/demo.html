@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Gilded Fork - Restaurant Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#121212',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @keyframes scroll {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(10px); }
+            100% { transform: translateY(0); }
+        }
+        .animate-scroll {
+            animation: scroll 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-dark text-white font-sans antialiased selection:bg-gold selection:text-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="font-serif text-2xl font-bold tracking-tighter text-gold uppercase">
+                [Your Restaurant Name]
+            </div>
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-white/70">
+                <a href="#menu" class="hover:text-gold transition-colors">Menu</a>
+                <a href="#about" class="hover:text-gold transition-colors">About</a>
+                <a href="#contact" class="hover:text-gold transition-colors">Contact</a>
+            </div>
+            <button class="md:hidden text-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img 
+                src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1200&q=80" 
+                alt="Fine Dining Atmosphere"
+                class="w-full h-full object-cover opacity-40"
+                referrerpolicy="no-referrer"
+            >
+            <div class="absolute inset-0 bg-gradient-to-b from-dark/20 via-dark/60 to-dark"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-6 max-w-4xl">
+            <span class="inline-block text-gold font-medium tracking-[0.3em] uppercase text-xs mb-6">
+                [Est. Year • Location]
+            </span>
+            <h1 class="font-serif text-5xl md:text-8xl font-bold mb-8 leading-[0.9] tracking-tighter">
+                [Your Restaurant Name] <br />
+                <span class="italic font-normal text-white/90">Experience</span>
+            </h1>
+            <p class="text-lg md:text-xl text-white/60 font-light max-w-2xl mx-auto mb-12 leading-relaxed">
+                [Your Catchy Slogan or Tagline Here]
+            </p>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-scroll">
+            <div class="w-px h-16 bg-gradient-to-b from-gold to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Quick Actions -->
+    <section class="py-12 px-6 -mt-20 relative z-20">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
+            <a href="#menu" class="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 flex flex-col items-center justify-center gap-4 hover:border-gold/50 transition-all duration-500">
+                <svg class="text-gold group-hover:scale-110 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                <span class="uppercase tracking-[0.2em] text-sm font-semibold">View Menu</span>
+            </a>
+            <a href="#book" class="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 flex flex-col items-center justify-center gap-4 hover:border-gold/50 transition-all duration-500">
+                <svg class="text-gold group-hover:scale-110 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2" ry="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+                <span class="uppercase tracking-[0.2em] text-sm font-semibold">Book a Table</span>
+            </a>
+            <a href="#map" class="group bg-white/5 backdrop-blur-xl border border-white/10 p-8 flex flex-col items-center justify-center gap-4 hover:border-gold/50 transition-all duration-500">
+                <svg class="text-gold group-hover:scale-110 transition-transform duration-500" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span class="uppercase tracking-[0.2em] text-sm font-semibold">Get Directions</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Featured Menu -->
+    <section id="menu" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
+                <div class="max-w-2xl">
+                    <span class="text-gold font-medium tracking-widest uppercase text-xs mb-4 block">Our Selection</span>
+                    <h2 class="font-serif text-4xl md:text-6xl font-bold leading-tight">Signature Dishes</h2>
+                </div>
+                <p class="text-white/50 max-w-md text-sm leading-relaxed">
+                    Our menu is a living tribute to seasonal ingredients, sourced from local artisans and prepared with classical techniques.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
+                <!-- Item 1 -->
+                <div class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" alt="Signature Dish 01" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl font-bold group-hover:text-gold transition-colors">Signature Dish 01</h3>
+                        <span class="text-gold font-serif text-xl">[$00]</span>
+                    </div>
+                    <p class="text-white/50 leading-relaxed font-light">[Brief, delicious description of your dish]</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=800&q=80" alt="Signature Dish 02" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl font-bold group-hover:text-gold transition-colors">Signature Dish 02</h3>
+                        <span class="text-gold font-serif text-xl">[$00]</span>
+                    </div>
+                    <p class="text-white/50 leading-relaxed font-light">[Brief, delicious description of your dish]</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" alt="Signature Dish 03" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl font-bold group-hover:text-gold transition-colors">Signature Dish 03</h3>
+                        <span class="text-gold font-serif text-xl">[$00]</span>
+                    </div>
+                    <p class="text-white/50 leading-relaxed font-light">[Brief, delicious description of your dish]</p>
+                </div>
+                <!-- Item 4 -->
+                <div class="group">
+                    <div class="relative aspect-[4/3] overflow-hidden mb-8">
+                        <img src="https://images.unsplash.com/photo-1473093226795-af9932fe5856?auto=format&fit=crop&w=800&q=80" alt="Signature Dish 04" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerpolicy="no-referrer">
+                        <div class="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    </div>
+                    <div class="flex justify-between items-start mb-4">
+                        <h3 class="font-serif text-2xl font-bold group-hover:text-gold transition-colors">Signature Dish 04</h3>
+                        <span class="text-gold font-serif text-xl">[$00]</span>
+                    </div>
+                    <p class="text-white/50 leading-relaxed font-light">[Brief, delicious description of your dish]</p>
+                </div>
+            </div>
+
+            <div class="mt-20 text-center">
+                <button class="group inline-flex items-center gap-4 border border-white/20 px-10 py-5 hover:border-gold hover:text-gold transition-all duration-500 uppercase tracking-widest text-xs font-bold">
+                    View Full Menu
+                    <svg class="group-hover:translate-x-1 transition-transform" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why a Website? -->
+    <section id="about" class="py-32 px-6 bg-white/5 border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full border border-gold/30 mb-10 text-gold">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+            </div>
+            <h2 class="font-serif text-3xl md:text-5xl font-bold mb-8 leading-tight">
+                A Professional Home for Your Food
+            </h2>
+            <p class="text-xl text-white/60 font-light leading-relaxed mb-12">
+                [Briefly describe the story and vibe of your restaurant here. Focus on what makes your community unique.]
+            </p>
+            <div class="flex items-center justify-center gap-8 opacity-40">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+            <div class="md:col-span-2">
+                <div class="font-serif text-2xl font-bold tracking-tighter text-gold mb-6 uppercase">
+                    [Your Restaurant Name]
+                </div>
+                <p class="text-white/40 max-w-sm leading-relaxed">
+                    [A brief closing statement about your restaurant's mission or atmosphere.]
+                </p>
+            </div>
+            <div>
+                <h4 class="uppercase tracking-widest text-xs font-bold mb-6 text-white/80">Location</h4>
+                <p class="text-white/40 text-sm leading-loose">
+                    [Your Address Line 1]<br />
+                    [Your Address Line 2]<br />
+                    [Your Country]
+                </p>
+            </div>
+            <div>
+                <h4 class="uppercase tracking-widest text-xs font-bold mb-6 text-white/80">Contact</h4>
+                <p class="text-white/40 text-sm leading-loose">
+                    Phone: [Your Phone Number]<br />
+                    Email: [Your Business Email]<br />
+                    Social: @[YourHandle]
+                </p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-white/20 uppercase tracking-widest">
+            <p>© 2024 [Your Restaurant Name]. All rights reserved.</p>
+            <div class="flex gap-8">
+                <a href="#" class="hover:text-gold transition-colors">Privacy Policy</a>
+                <a href="#" class="hover:text-gold transition-colors">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <div class="fixed bottom-8 right-8 z-50">
+        <a href="https://wa.me/yournumber" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 bg-[#25D366] text-white px-6 py-4 rounded-full shadow-2xl shadow-green-500/20 group hover:scale-105 transition-transform">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/><path d="M8 12h.01"/><path d="M12 12h.01"/><path d="M16 12h.01"/></svg>
+            <span class="font-bold text-sm hidden md:inline">Contact on WhatsApp</span>
+        </a>
+    </div>
+
+</body>
+</html>
