@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Phone, UserRound } from 'lucide-react';
-const heroImg = "/websites/CLINIC/src_assets/hero.png";
+const heroImg = "https://clinic-sigma-ten.vercel.app/assets/hero-IrkI6sl3.png";
 import FloatingDoodle from './FloatingDoodle';
 import { DOODLE_PATHS } from '../utils/doodlePaths';
 

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { Stethoscope, Activity, HeartPulse, UserRound, Clock, Calendar, ArrowRight } from 'lucide-react';
-const doctorImage = "/websites/CLINIC/src_assets/doctor-final-cropped.png";
+const doctorImage = "https://clinic-sigma-ten.vercel.app/assets/doctor-final-cropped-DBBrzheu.png";
 
 const Services = () => {
   const allServices = [

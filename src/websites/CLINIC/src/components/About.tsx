@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 import { HeartPulse, Stethoscope } from 'lucide-react';
-const aboutImg = "/websites/CLINIC/src_assets/about.png";
-import FloatingDoodle from './FloatingDoodle';
+const aboutImg = "https://clinic-sigma-ten.vercel.app/assets/about-BeJP3txX.png";
+import KineticText from './common/KineticText';
 import { DOODLE_PATHS } from '../utils/doodlePaths';
 
 const About = () => {
@@ -26,7 +26,7 @@ const About = () => {
             viewport={{ once: true }}
             className="order-2 md:order-1"
           >
-            <h2 className="text-4xl font-bold mb-6">Dedicated to Your Well-being</h2>
+            <KineticText className="text-4xl font-bold mb-6">Dedicated to Your Well-being</KineticText>
             <p className="text-gray-600 mb-6 leading-relaxed">
               YOUR CLINIC was founded on the principles of selfless service and medical integrity. Located in the heart of your community, we have become a beacon of trust for hundreds of families.
             </p>
