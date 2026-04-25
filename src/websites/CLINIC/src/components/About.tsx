@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { HeartPulse, Stethoscope } from 'lucide-react';
 const aboutImg = "https://clinic-sigma-ten.vercel.app/assets/about-BeJP3txX.png";
 import KineticText from './common/KineticText';
+import FloatingDoodle from './FloatingDoodle';
 import { DOODLE_PATHS } from '../utils/doodlePaths';
 
 const About = () => {
