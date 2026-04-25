@@ -27,7 +27,7 @@ export default function Footer() {
                 <Code2 size={18} className="text-white" />
               </div>
               <span className="text-lg font-bold tracking-tight">
-                Web<span className="text-sky-400">Craft</span>
+                Skyline <span className="text-sky-400">Digital</span>
               </span>
             </a>
             <p className="text-slate-400 text-sm leading-relaxed max-w-xs">
@@ -74,7 +74,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-white/8 pt-7 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-          <span>© {new Date().getFullYear()} WebCraft. All rights reserved.</span>
+          <span>© {new Date().getFullYear()} Skyline Digital. All rights reserved.</span>
           <span className="flex items-center gap-1.5">
             Made with <Heart size={12} className="text-rose-500 fill-rose-500" /> for great businesses
           </span>

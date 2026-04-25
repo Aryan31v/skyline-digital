@@ -9,7 +9,6 @@ import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Services from './components/Services';
 import Portfolio from './components/Portfolio';
-import Pricing from './components/Pricing';
 import Process from './components/Process';
 import About from './components/About';
 import Contact from './components/Contact';
@@ -83,8 +82,8 @@ function Layout() {
 
     const path = location.pathname.substring(1);
     document.title = path 
-      ? `${path.charAt(0).toUpperCase() + path.slice(1)} Demo — Landing Page`
-      : 'Landing Page — Professional Website Design';
+      ? `${path.charAt(0).toUpperCase() + path.slice(1)} Demo — Skyline Digital`
+      : 'Skyline Digital — Professional Website Design';
 
     return () => {
       window.removeEventListener('message', handleMessage);
@@ -141,7 +140,6 @@ function Home() {
         <Marquee />
         <Services />
         <Portfolio />
-        <Pricing />
         <Process />
         <About />
         <Contact />

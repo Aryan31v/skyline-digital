@@ -38,7 +38,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section id="process" className="relative py-28 bg-white overflow-hidden">
+    <section id="process" className="relative pt-14 pb-28 bg-white overflow-hidden">
       <div className="absolute top-20 left-16 animate-float-medium pointer-events-none">
         <ArrowDoodle color="#F59E0B" size={40} className="opacity-40" />
       </div>

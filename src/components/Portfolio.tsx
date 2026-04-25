@@ -63,7 +63,7 @@ export default function Portfolio() {
   };
 
   return (
-    <section id="portfolio" className="relative py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
+    <section id="portfolio" className="relative pt-28 pb-14 bg-gradient-to-b from-slate-50 to-white overflow-hidden">
       <div className="absolute top-16 left-12 animate-spin-slow pointer-events-none">
         <CircleDoodle color="#0EA5E9" size={52} className="opacity-30" />
       </div>

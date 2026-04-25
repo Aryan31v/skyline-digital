@@ -1,7 +1,8 @@
-# Landing Page: Project Map
+# Skyline Digital: Project Map
 
-## Core Objective
-A single-page, modern promotional website (Landing Page) for a web design and development agency launched by Aryan. It focuses on "Helping clients make more clients" through professional, high-converting websites.
+## Project Overview
+A single-page, modern promotional website (Skyline Digital) for a web design and development agency launched by Aryan. It focuses on "Helping clients make more clients" through professional, high-converting websites.
+
 
 ## Proposed Tech Stack
 -   **Framework:** React 18 with Vite

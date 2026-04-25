@@ -4,7 +4,6 @@ import { Menu, X, Code2 } from 'lucide-react';
 const links = [
   { label: 'Services', href: '#services' },
   { label: 'Work', href: '#portfolio' },
-  { label: 'Pricing', href: '#pricing' },
   { label: 'Process', href: '#process' },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
@@ -32,7 +31,7 @@ export default function Navbar() {
             <Code2 size={18} className="text-white" />
           </div>
           <span className="text-lg font-bold text-slate-800 tracking-tight">
-            Landing <span className="gradient-text">Page</span>
+            Skyline <span className="gradient-text">Digital</span>
           </span>
         </a>
 
