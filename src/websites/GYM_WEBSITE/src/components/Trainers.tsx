@@ -5,19 +5,19 @@ const trainers = [
   {
     name: "Viktor Drago",
     specialty: "Strength & Conditioning",
-    image: "/websites/GYM_WEBSITE/websites/GYM_WEBSITE/assets/viktor.png",
+    image: "/websites/GYM_WEBSITE/assets/viktor.png",
     bio: "Former Olympic weightlifter with 15+ years of experience in building elite athletes."
 },
   {
     name: "Elena Rossi",
     specialty: "Nutrition & Fat Loss",
-    image: "/websites/GYM_WEBSITE/websites/GYM_WEBSITE/assets/elena.png",
+    image: "/websites/GYM_WEBSITE/assets/elena.png",
     bio: "Certified nutritionist specializing in sustainable body transformations and metabolic health."
 },
   {
     name: "Jaxson Pierce",
     specialty: "HIIT & Mobility",
-    image: "/websites/GYM_WEBSITE/websites/GYM_WEBSITE/assets/jaxson.png",
+    image: "/websites/GYM_WEBSITE/assets/jaxson.png",
     bio: "Movement specialist focused on functional fitness and injury prevention for high-intensity training."
 }
 ];
